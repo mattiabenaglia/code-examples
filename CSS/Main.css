@@ -1,0 +1,1687 @@
+﻿/*#region Colori Utilizzati */
+/*  Blu Scuro: #1c3c6d      */
+/*  Azzurro: #61bfe8        */
+/*  Azzurro chiaro: #CFEBF8 */
+/*  Rosso: #E32726          */
+/*  Grigio: #CACACA         */
+/*#endregion                */
+
+/*#region master*/
+
+html {
+    font-size: 12px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 200;
+}
+
+body {
+    font-size: 1rem;
+    background-color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 200;
+}
+
+input,
+textarea,
+.ui-widget input,
+.ui-widget textarea {
+    color: #1c3c6d;
+    padding: 0.25rem;
+    line-height: 1;
+    font-size: 1.2rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 200;
+    border: 1px solid #1c3c6d;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+input,
+.ui-widget input {
+    height: 2.5rem;
+}
+
+textarea,
+.ui-widget textarea {
+    resize: none;
+}
+
+.gridWrapper {
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+}
+
+input::-webkit-input-placeholder {
+    color: #999999;
+    opacity: 1;
+    font-size: 1.25rem;
+}
+
+
+input::-moz-placeholder {
+    color: #999999;
+    opacity: 1;
+    font-size: 1.25rem;
+}
+
+input:-ms-input-placeholder {
+    color: #999999;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    font-size: 1.25rem;
+}
+
+input:focus::-moz-placeholder {
+    opacity: 0.6;
+}
+
+input:focus::-webkit-input-placeholder {
+    opacity: 0.6;
+}
+
+input:focus:-ms-input-placeholder {
+    filter: alpha(opacity=60);
+    opacity: 0.6;
+}
+
+/*#endregion*/
+
+/*#region header */
+
+#Header {
+    height: 4rem;
+    display: block;
+    width: 100%;
+    position: fixed;
+    background-color: #E32726;
+    min-width: 805px;
+    top:0;
+    z-index:2;
+}
+
+.systemManageContainer {
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+    width: auto;
+    /*DA METTERE NEL RICALCOLO*/
+    right: 10px;
+}
+
+/*#region Language*/
+
+.language {
+    display: inline-block;
+    position: relative;
+    height: auto;
+    width: auto;
+    color: #ffffff;
+    vertical-align: middle;
+}
+
+.language > * {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+}
+
+.selectChangeLanguage {
+    width: 160px;
+}
+
+.buttonChangeLanguage {
+    display: inline-block;
+    position: relative;
+    background-color: #61bfe8;
+    border: 0;
+    color: #ffffff;
+    cursor: pointer;
+    text-align: center;
+}
+
+/*#endregion*/
+
+.userInfo {
+    display: inline-block;
+    position: relative;
+    height: 3rem;
+    padding: 0.5rem;
+    width: auto;
+    vertical-align: middle;
+}
+
+.userInfo > span {
+    display: block;
+    position: relative;
+    height: 50%;
+    text-align: right;
+    color: #fff;
+}
+
+.sysConfigImage {
+    display: inline-block;
+    position: relative;
+    height: 3rem;
+    width: 3rem;
+    padding: 0.5rem;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 1px 0 0;
+    vertical-align: middle;
+}
+
+.systemConfiguration {
+    margin-left: -4px;
+    cursor: pointer;
+}
+
+/*#endregion*/
+
+/*#region content*/
+
+#Master,
+#Content
+{
+    position: relative;
+    display: block;
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    margin: auto;
+}
+
+#Master {
+    /*il contenuto è alto come lo spazio che rimane sotraendo la barra di header e la barra di footer*/
+    /*MODALITA SCROLL ALLA MOBILE*/
+    /*box-sizing:border-box;
+    height: 100%;
+    padding: 4em 0 4em 0;
+    overflow: auto;*/
+
+    position: absolute;
+    top: 4em;
+    bottom: 4em;
+    padding: 0;
+    height: auto;
+    left:0;
+    right:0;
+    overflow:auto;
+}
+
+#Content {
+    /*tiene conto anche del proprio padding*/
+    box-sizing:border-box;
+    height:100%;
+    padding: 0 10px 5px 10px;
+}
+
+.verticalLinkHTML {
+    height: calc(100% - 30px);
+    /*overflow: auto;*/
+}
+
+.verticalLinkTextContainer {
+    height:100%;
+    overflow:auto;
+}
+
+#MainStandard {
+    height: 100%;
+}
+
+/*#region HubControl*/
+
+.titleSectionContainer > span {
+    color: #1c3c6d;
+}
+
+/*#endregion*/
+
+/*#region title Menu*/
+
+.contentTitle {
+    display: block;
+    position: relative;
+    height: 6rem;
+    width:100%;
+    box-sizing:border-box;
+}
+
+/*#region title Portal*/
+
+.titleImage,
+.title,
+.titlePortal {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+}
+
+.titleImage {
+    margin: 0.5rem 0;
+    height: calc(100% - 1rem);
+    width: calc(5rem * 2.9);
+    background-image: url('../../Images/Custom/Main/Portal_logo.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.title,
+.titlePortal {
+    height: 3rem;
+    width: auto;
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.title {
+    color: #1c3c6d;
+}
+
+.title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+.titlePortal {
+    color: #E32726;
+}
+
+.contentTitle.noLogo
+{
+    height:3.2rem;
+}
+
+.contentTitle.noLogo .titleImage
+{
+    background-image:none;
+    width:0;
+    margin:0;
+    height:100%;
+}
+
+/*#endregion*/
+
+/*#region horizontal App*/
+
+.horizontalAppList {
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    white-space: nowrap;
+    overflow-x: auto;
+    vertical-align: middle;
+}
+
+.horizontalAppItem {
+    display: inline-block;
+    position: relative;
+    border-left: 2px solid #CACACA;
+    width: auto;
+    font-size: 1rem;
+    color: #1c3c6d;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    margin-left: -4px;
+}
+
+    .horizontalAppItem:first-child {
+        margin-left: 0;
+    }
+
+    .horizontalAppItem:hover {
+        background-color: #61bfe8;
+        color: #fff;
+        cursor: pointer;
+        background-image: none;
+    }
+
+/*#endregion*/
+
+/*#region vertical App*/
+
+/*#region vertical Link*/
+
+
+.verticalLink.k-widget {
+    display: inline-block;
+    position: relative;
+    width: auto;
+    font-size: 1rem;
+    vertical-align: middle;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    border-left: 2px solid #CACACA;
+    border-right: 2px solid #CACACA;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.verticalLink,
+.verticalLink .k-state-active {
+    color: #1c3c6d;
+    background-color: #fff;
+    border: 0;
+    margin: 0;
+    background-image: none;
+}
+
+    .verticalLink .k-state-focused {
+        box-shadow: unset;
+    }
+
+    .verticalLink.k-widget > .k-item {
+        display: block;
+        position: relative;
+        height: 100%;
+        margin: 0;
+        border: 0;
+        padding: 0 13px 0 13px;
+        width: auto;
+        float: none;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+        .verticalLink.k-widget > .k-item > .k-link {
+            display: block;
+            position: relative;
+            height: 100%;
+            margin: 0;
+            border: 0;
+            padding: 0;
+            width: auto;
+        }
+
+    .verticalLink .k-icon.k-i-arrow-s,
+    .verticalLink:hover .k-icon.k-i-arrow-s {
+        background: none;
+        background-image: url('../../Images/Custom/Main/ArrowDown_1c3c6d.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .verticalLink .k-state-hover,
+    .verticalLink .k-state-hover > .k-link {
+        background-color: #61bfe8;
+        color: #fff;
+        cursor: pointer;
+        background-image: none;
+    }
+
+    /*#endregion*/
+
+    /*#region vertical Link Item*/
+
+    .verticalLink .k-animation-container {
+        /*width: auto !important;*/
+        min-width: 200px; /* FIX perchè con IE a volte non funziona il submenu e non calcola la larghezza correttamente */
+        margin: 0 !important;
+        border: 0;
+        border-right: 2px solid #CACACA;
+        padding: 0 !important;
+        left: auto !important;
+        right: -2px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        box-shadow: -2px 2px 2px 0 #CACACA;
+    }
+
+        .verticalLink .k-animation-container .k-menu-group {
+            margin: 0;
+            left: 0;
+            right: 0;
+            border: 0;
+            box-shadow: unset;
+            color: #1c3c6d;
+            background-color: #fff;
+        }
+
+.verticalLinkItem {
+    display: block;
+    position: relative;
+    padding: 0.25rem 22px 0.25rem 5px;
+    height: auto;
+    width: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 1rem;
+    text-align: right;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 200;
+}
+
+    .verticalLinkItem:first-child {
+        margin-top: 0.5rem;
+    }
+
+    .verticalLinkItem:hover {
+        background-color: #61bfe8;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .verticalLinkItem > span {
+        display: block;
+        position: relative;
+    }
+
+/*#endregion*/
+
+/*#endregion*/
+
+/*#endregion*/
+
+/*#region SlideShow*/
+
+.contentBody {
+    display: block;
+    position: relative;
+    /*togliamo l'altezza della parte con il titolo, le horizontal app ecc*/
+    height: calc(100% - 6rem);
+    width: 100%;
+}
+
+.contentTitle.noLogo + .contentBody
+{
+    /*togliamo l'altezza della parte con il titolo, quando questo è senza logo*/
+    height: calc(100% - 3.2rem);
+}
+
+#SlideShow {
+    position: relative;
+    display: block;
+    /*height è settata da script*/
+    width: 100%;
+    box-shadow: 0 0 5px 0 #CACACA;
+}
+
+/*#region Image*/
+
+.imageSlideShow {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.imageSlideShow,
+.videoSlideShow {
+    height: 100%;
+    width: 100%;
+    /*position:relative;
+    display: block;*/
+    position: absolute;
+    display: inline-block;
+}
+
+.videoSlideShow {
+    background-color: #000;
+}
+
+.hideStart {
+    width: 0;
+}
+
+.hideLeft {
+    -webkit-transition: width 1s ease;
+    -moz-transition: width 1s ease;
+    -o-transition: all 1s ease;
+    transition: width 1s ease;
+    width: 0;
+    right: 0;
+    left: auto;
+}
+
+.showRight {
+    -webkit-transition: width 1s ease;
+    -moz-transition: width 1s ease;
+    -o-transition: all 1s ease;
+    transition: width 1s ease;
+    width: 100%;
+    right: auto;
+    left: 0;
+}
+
+/*#endregion*/
+
+/*#endregion*/
+
+/*#region Libraries*/
+
+.contentdocument {
+    display: inline-block;
+    position: relative;
+    width: 50%;
+    height:100%;
+    vertical-align: top;
+    box-sizing: border-box;
+    padding-right: 10px;
+    /*padding-top: 1%;*/
+}
+
+/*#region document Title and List*/
+
+.documentTitleList {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: auto;
+}
+
+.documentTitle {
+    display: block;
+    position: relative;
+    height: 2rem;
+    padding: 0.5rem 0 0.5rem 0;
+    font-size: 2rem;
+    line-height: 1;
+    width: auto;
+    color: #1c3c6d;
+    /*vertical-align: middle;*/
+}
+
+/*#region documentList */
+
+.documentList {
+    display: block;
+    position: relative;
+    height: calc(100% - 5rem - 10px);
+    width: auto;
+    max-width: 130px;
+    margin: 10px 0 0 0;
+    padding: 0;
+    border: 0;
+    /*vertical-align:top;*/
+    overflow-y: auto;
+}
+
+.stacked .documentList
+{
+    max-width:220px;
+}
+
+.documentItem {
+    display: block;
+    position: relative;
+    height: auto;
+    width: auto;
+    font-size: 1.25rem;
+    color: #1c3c6d;
+    font-weight: 600;
+    border-bottom: 2px solid #61bfe8;
+    padding: 5px 5px 5px 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+    .documentItem:hover {
+        background-color: #61bfe8;
+        color: #fff;
+        border-bottom-color: #fff;
+        cursor: pointer;
+    }
+
+.documentActive {
+    color: #61bfe8;
+}
+
+/*#endregion*/
+
+/*#endregion*/
+
+/*#region bodydocument*/
+
+.bodydocument {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    /*width viene settata tramite script*/
+    width: 0;
+    padding-left: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+.borderdocument {
+    display: inline-block;
+    position: relative;
+    margin: calc(1.5rem - 0.5px) 0 calc(1.5rem - 0.5px) 0;
+    height: 1px;
+    width: 100%;
+    background-color: #61bfe8;
+    vertical-align: middle;
+}
+
+/*#region document search and list */
+
+/*#region document search */
+
+.documentContent {
+    display: block;
+    position: relative;
+    height: calc(100% - 3rem);
+    width: 100%;
+    vertical-align: top;
+    padding: 10px 0 0 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.textSearchContent {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 2.5rem;
+}
+
+.textSearch,
+.ui-widget .textSearch {
+    display: inline-block;
+    position: relative;
+    /*height: 100%;*/
+    width: calc(100% - 30px);
+    /*padding: 0.25rem 5px 0.25rem 5px;*/
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 2px solid #61bfe8;
+    vertical-align: top;
+    /*-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing:border-box;*/
+}
+
+.imageSearch {
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    width: 30px;
+    vertical-align: top;
+    background-color: #61bfe8;
+    cursor: pointer;
+}
+
+.imageSearchDiv {
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+    margin-top: -12.5px;
+    height: 25px;
+    width: 25px;
+    background-image: url('../../Images/Custom/Main/DocumentSearch.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*#endregion*/
+
+/*#region document list */
+
+.documentTable {
+    position: relative;
+    display: block;
+    padding: 10px 0 0 0;
+    height: calc(100% - 2.5rem);
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+    .documentTable > .k-grid {
+        border: 1px solid #61bfe8;
+    }
+
+    .documentTable .k-grid-header,
+    .documentTable .k-grid-header-wrap,
+    .documentTable .k-grid-header .k-header {
+        background-color: #61bfe8;
+        color: #fff;
+        border-color: #61bfe8;
+        text-align: left;
+        font-size: 1.25rem;
+    }
+
+    .documentTable .k-alt,
+    .documentTable .k-alt td {
+        background-color: transparent;
+    }
+
+    .documentTable .k-grid td {
+        border-color: transparent;
+        color: #1c3c6d;
+        border-bottom: 1px solid #cacaca;
+        font-size: 1.25rem;
+    }
+
+    .documentTable .k-selectable tr[role="row"]:hover td {
+        background-color: #CFEBF8;
+    }
+
+/*#endregion*/
+
+/*#endregion*/
+
+/*#endregion*/
+
+/*#endregion*/
+
+/*#region Openissues*/
+
+.contentOpenissue {
+    display: inline-block;
+    position: relative;
+    height:100%;
+    width: 50%;
+    vertical-align: top;
+    box-sizing: border-box;
+    padding-left: 10px;
+    /*padding-top: 1%;*/
+}
+
+.innerContent > .contentOpenissue
+{
+    letter-spacing:-4px; /*White space fix*/
+}
+
+.contentOpenissue > *
+{
+    letter-spacing:normal;
+}
+
+
+/*#region NeedHelp*/
+
+.needHelpContent {
+    display: block;
+    position: relative;
+    height: 5rem;
+    width: 100%;
+    /*background-color:#1c3c6d;*/
+    background-color: #61BFE8;
+    cursor: pointer;
+}
+
+
+.newissueContent {
+    display: inline-block;
+    position: relative;
+    box-sizing:border-box;
+    height: 3rem;
+    cursor: pointer;
+    vertical-align: top;
+}
+
+
+.newissueContent {
+    background-color: #61BFE8;
+    width: 100%;
+}
+
+.stacked .newissueContent 
+{
+    width:50%;
+    margin-left:50%;
+}
+
+.imageissuesContainer {
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    width: auto;
+    vertical-align: middle;
+    padding: 0.5% 3% 0.5% 3%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.needHelp {
+    display: inline;
+    position: relative;
+    color: #fff;
+    font-size: 1.5rem;
+    vertical-align: middle;
+}
+
+/*#region Dovetail popup*/
+
+.dovetailPopUp {
+    display: block;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+/*#region Solutions*/
+
+.solutions {
+    display: block;
+    position: relative;
+    padding-top: 10px;
+    height: calc(100% - 3rem - 14px);
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.solutionsSearch .textSearch {
+    border-color: #61bfe8;
+}
+
+.solutionsSearch .imageSearch {
+    background-color: #61bfe8;
+}
+
+.solutionsTable {
+    position: relative;
+    display: block;
+    padding: 10px 0 0 0;
+    height: calc(100% - 2.5rem);
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+    .solutionsTable > .k-grid {
+        border: 1px solid #61bfe8;
+    }
+
+    .solutionsTable .k-grid-header,
+    .solutionsTable .k-grid-header-wrap,
+    .solutionsTable .k-grid-header .k-header {
+        background-color: #61bfe8;
+        color: #fff;
+        border-color: #61bfe8;
+        text-align: left;
+        font-size: 1.25rem;
+    }
+
+    .solutionsTable .k-alt,
+    .solutionsTable .k-alt td {
+        background-color: transparent;
+    }
+
+    .solutionsTable .k-grid td {
+        border-color: transparent;
+        color: #1c3c6d;
+        border-bottom: 1px solid #cacaca;
+        font-size: 1.25rem;
+    }
+
+    .solutionsTable .k-selectable tr[role="row"]:hover td {
+        background-color: #CFEBF8;
+    }
+
+/*#endregion*/
+
+/*#region didYouFindInfo*/
+
+.didYouFindInfo {
+    display: block;
+    position: relative;
+    padding: 5px;
+    height: 3rem;
+    width: auto;
+    font-size: 1.5rem;
+    color: #1c3c6d;
+}
+
+.didYouFindInfoText {
+    display: inline-block;
+    position: relative;
+    max-width: calc(100% - 12rem);
+    width: auto;
+    text-align: left;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+.doYouNeedMoreInfoNo,
+.doYouNeedMoreInfoYes {
+    display: inline-block;
+    position: relative;
+    border: 1px solid #1c3c6d;
+    height: 100%;
+    width: 5rem;
+    cursor: pointer;
+    /*background-color: #1c3c6d;*/
+    color: #1c3c6d;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 2.5rem;
+    vertical-align: middle;
+}
+
+    .doYouNeedMoreInfoNo:hover,
+    .doYouNeedMoreInfoYes:hover {
+        border-color: #61bfe8;
+        color: #fff;
+        background-color: #61bfe8;
+    }
+
+/*#endregion*/
+
+/*#region New issue*/
+
+.createissue {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.createissueContent {
+    display: block;
+    position: relative;
+    width: 100%;
+    /*l'altezza del menu delle azioni*/
+    height: calc(100% - 50px - 1rem);
+    overflow-y: auto;
+}
+
+/*#region Insertion Row*/
+
+.insertionRow {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.insertionFieldCaption,
+.insertionFieldLabel {
+    /*display: block;*/
+    width: 100%;
+    position: relative;
+    height: 1.7rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.insertionFieldLabel {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 200;
+}
+
+input.insertionFieldInput {
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+textarea.textAreaNote {
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+.insertionFieldInput:focus,
+.textAreaNote:focus {
+    border-color: #61bfe8;
+}
+
+/*#region Elfo kendocombobox*/
+
+/*.k-state-focused.k-state-selected, .k-list > .k-state-focused.k-state-selected, .k-listview > .k-state-focused.k-state-selected, td.k-state-focused.k-state-selected*/
+
+div.kendoComboBoxNestedTreeView .k-state-focused.k-state-selected,
+div.kendoComboBoxNestedTreeView .k-state-focused,
+div.kendoComboBoxNestedTreeView .k-state-selected,
+div.kendoComboBoxNestedTreeView .k-state-hover {
+    background-color: #61bfe8;
+    background-image: none;
+    -webkit-box-shadow: 0 0 3px 1px #61bfe8 inset;
+    -moz-box-shadow: 0 0 3px 1px #61bfe8 inset;
+    box-shadow: 0 0 3px 1px #61bfe8 inset;
+}
+
+div.kendoComboBoxNestedTreeView {
+    font-size: 1.2rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 200;
+    line-height: 1;
+    color: #1c3c6d;
+    z-index: 100;
+    background-color: #fff;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    max-height: 200px;
+    height: auto;
+}
+
+span.elfoKendoComboBox,
+span.elfoKendoComboBoxTreeView {
+    display: block;
+    position: relative;
+    height: 2.5rem;
+    width: 100%;
+}
+
+.elfoKendoComboBox > .k-dropdown-wrap,
+.elfoKendoComboBoxTreeView > .k-dropdown-wrap {
+    position: relative;
+    display: block;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    border: 0;
+    background: none;
+}
+
+.elfoKendoComboBox input.elfoKendoComboBox,
+.elfoKendoComboBoxTreeView input.elfoKendoComboBoxTreeView {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #1c3c6d;
+    padding: 0.25rem;
+    height: 100%;
+    width: calc(100% - 2.5rem) !important;
+    font-size: 1.2rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 200;
+    line-height: 1;
+    text-indent: 0;
+}
+
+.elfoKendoComboBox > .k-state-focused > input.elfoKendoComboBox,
+.elfoKendoComboBoxTreeView > .k-state-focused > input.elfoKendoComboBoxTreeView,
+.elfoKendoComboBox > .k-state-focused > .k-select,
+.elfoKendoComboBoxTreeView > .k-state-focused > .k-select {
+    border-color: #61bfe8;
+}
+
+input.elfoKendoComboBox + .k-select, input.elfoKendoComboBoxTreeView + .k-select {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #1c3c6d;
+    border-left: 0;
+    height: 100%;
+    width: 2.5rem;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+    input.elfoKendoComboBox + .k-select:hover,
+    input.elfoKendoComboBoxTreeView + .k-select:hover,
+    .elfoKendoComboBox > .k-state-focused > .k-select,
+    .elfoKendoComboBoxTreeView > .k-state-focused > .k-select {
+        background-color: #61bfe8;
+    }
+
+.elfoKendoComboBox .k-select > .k-icon,
+.elfoKendoComboBoxTreeView .k-select > .k-icon {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+    margin-top: -0.75rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    background: none;
+    background-image: url('../../Images/Custom/Main/ArrowDown_1c3c6d.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+input.elfoKendoComboBox + .k-select:hover > .k-icon,
+input.elfoKendoComboBoxTreeView + .k-select:hover > .k-icon,
+.elfoKendoComboBox > .k-state-focused .k-icon,
+.elfoKendoComboBoxTreeView > .k-state-focused .k-icon {
+    background-image: url('../../Images/Custom/Main/ArrowDown_fff.svg');
+}
+
+.k-popup.k-list-container {
+    border-color: #61bfe8;
+    background-color: #fff;
+    padding: 0;
+}
+
+.k-list-container > .k-list > .k-item,
+.k-list-container > .k-list > .k-state-hover {
+    height: 1.5rem;
+    margin: 0.25rem;
+    border: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 200;
+    font-size: 1.2rem;
+    line-height: 1;
+    min-height: 0;
+    color: #1c3c6d;
+    background: none;
+}
+
+.k-list-container > .k-list > .k-state-hover {
+    border-radius: 0;
+    background: none;
+    background-color: #61bfe8;
+    border-color: #fff;
+    color: #fff;
+}
+
+.k-list-container > .k-list > .k-state-focused {
+    border-radius: 0;
+    box-shadow: none;
+    margin: calc(0.25rem - 1px);
+    border: 1px solid #61bfe8;
+}
+
+/*#endregion*/
+
+/*#region Attachments*/
+
+.k-upload-button input {
+    z-index: 10000;
+}
+
+.k-upload {
+    border-color: #1c3c6d;
+}
+
+    .k-upload .k-dropzone {
+        padding: 0;
+    }
+
+    .k-upload .k-button {
+        margin: 0;
+        border-color: #1c3c6d;
+        background-color: #1c3c6d;
+        color: #fff;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 200;
+        font-size: 1.25rem;
+        background-image: none;
+        box-shadow: none;
+    }
+
+        .k-upload .k-button:hover {
+            border-color: #61bfe8;
+            background-color: #61bfe8;
+        }
+
+    .k-upload .k-dropzone > .k-upload-status-total {
+        display: none;
+    }
+
+    .k-upload .k-upload-status {
+        font-size: 1.25rem;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 200;
+    }
+
+    .k-upload .k-upload-files {
+        border-color: #1c3c6d;
+        margin: 0;
+    }
+
+.insertionRow .k-upload-files {
+    max-height: 88px;
+    overflow-y: auto;
+}
+
+.k-upload .k-file {
+    border-color: #1c3c6d;
+}
+
+    .k-upload .k-file > .k-icon {
+        display: none;
+    }
+
+.k-upload .k-filename {
+    color: #1c3c6d;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 200;
+    font-size: 1.25rem;
+}
+
+.k-upload .k-button.k-upload-selected {
+    display: none;
+}
+
+/*#endregion*/
+
+/*#endregion*/
+
+/*#region Actions*/
+
+.createissueActions {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    height: auto;
+    width: 100%;
+}
+
+.createissueActionContainer {
+    display: block;
+    margin: auto;
+    width: 40px;
+}
+
+.actionContainer {
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    position: relative;
+    height: calc(50px + 1rem);
+    width: 40px;
+    vertical-align: middle;
+}
+
+.buttonissue {
+    display: block;
+    position: relative;
+    border: 2px solid #1c3c6d;
+    border-radius: 100%;
+    padding: 6px;
+    height: 40px;
+    width: 100%;
+    cursor: pointer;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.buttonissueDesc {
+    display: block;
+    position: relative;
+    height: 1rem;
+    width: 100%;
+    line-height: 1;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 1px;
+}
+
+.saveissue,
+.backissue {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 24px;
+    width: 24px;
+}
+
+.saveissue {
+    background-image: url('../../Images/Custom/Main/Save_blue.png');
+}
+
+.backissue {
+    background-image: url('../../Images/Custom/Main/Back_blue.png');
+}
+
+#callCenterButtonissueDesc{
+    display:inline-block;
+    width:310px;
+    position: relative;
+    height: 2.5rem;
+    font-size: 2rem;
+    color: #1c3c6d;
+    top:-5px;
+}
+
+/*#endregion*/
+
+/*#endregion*/
+
+/*#endregion*/
+
+/*#endregion*/
+
+/*#region Openissues List*/
+
+.bodyMyissues {
+    display: block;
+    position: relative;
+    padding-top: 10px;
+    height: calc(100% - 5rem);
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*#region Openissues List Header*/
+
+.myissueTitle {
+    display: inline;
+    position: relative;
+    height: 2.5rem;
+    width: 50%;
+    font-size: 2rem;
+    color: #1c3c6d;
+}
+
+/*#endregion*/
+
+/*#region Openissues List Grid*/
+
+.myissuesContainer {
+    display: block;
+    box-sizing:border-box;
+    position: relative;
+    width: 100%;
+    padding-top:3rem;
+    height:100%;
+}
+
+
+.contentOpenissue > * + .myissuesContainer /* se ho qualcosa prima lascio lo spazio, altimenti lo occuperà il padding. vedere se ragionare invece sul fatto di discendere o mendo da .noLink */
+{
+    padding-top:0;
+    height: calc(100% - 3rem);
+}
+
+    .myissuesContainer > .k-tabstrip-wrapper,
+    .myissuesContainer .k-tabstrip {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    .myissuesContainer [role="tabpanel"] {
+        height: calc(100% - 50px) !important;
+    }
+
+    .myissuesContainer .k-tabstrip > .k-tabstrip-items {
+        padding: 10px 0 0 0;
+    }
+
+    .myissuesContainer .k-tabstrip-items .k-item {
+        border: 1px solid #CACACA;
+        border-bottom: 0;
+        padding: 0 0 10px 0;
+        line-height: 1;
+        font-size: 1.2rem;
+    }
+
+        .myissuesContainer .k-tabstrip-items .k-item.k-state-hover,
+        .myissuesContainer .k-tabstrip-items .k-item.k-state-hover:hover {
+            background: none;
+            background-color: #CFEBF8;
+            color: #1c3c6d;
+        }
+
+        .myissuesContainer .k-tabstrip-items .k-item.k-state-active {
+            border-color: #61bfe8;
+        }
+
+        .myissuesContainer .k-tabstrip-items .k-item .k-loading.k-complete {
+            display: none;
+        }
+
+        .myissuesContainer .k-tabstrip-items .k-item .k-link {
+            font-family: "Montserrat", sans-serif;
+            color: #1c3c6d;
+            padding-top:0.6em;
+            padding-bottom:0.4em;
+        }
+
+        .myissuesContainer .k-tabstrip-items .k-item.k-state-active .k-link {
+            color: #61bfe8;
+            font-weight: 600;
+        }
+
+    .myissuesContainer .k-tabstrip .k-content {
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    .myissuesContainer .k-state-active {
+        border-color: #dadada;
+    }
+
+k-item.k-state-default.k-last.k-state-hover {
+    background-color: #61bfe8 !important;
+}
+
+.myissueTable {
+    position: relative;
+    display: block;
+    padding: 0 0 0 0;
+    height: 100%;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+    .myissueTable > .k-grid {
+        border: 1px solid #61BFE8;
+    }
+
+    .myissueTable .k-grid-header,
+    .myissueTable .k-grid-header-wrap,
+    .myissueTable .k-grid-header .k-header,
+    .myissueTable .k-header .k-link {
+        background-color: #61BFE8;
+        color: #fff;
+        border-color: #61BFE8;
+        text-align: left;
+        font-size: 1.25rem;
+    }
+
+    .myissueTable .k-alt,
+    .myissueTable .k-alt td {
+        background-color: transparent;
+    }
+
+    .myissueTable .k-grid td {
+        border-color: transparent;
+        color: #1c3c6d;
+        border-bottom: 1px solid #cacaca;
+        font-size: 1.25rem;
+    }
+
+    .myissueTable .k-selectable tr[role="row"]:hover td {
+        background-color: #CFEBF8;
+    }
+
+/*#endregion*/
+
+/*#endregion*/
+
+/*#endregion*/
+
+/*#region grids*/
+
+#Contents .k-grid-header .k-header,
+#Contents .k-grid-content td[role="gridcell"]
+{
+    padding-left:0.3rem;
+    padding-right:0.3rem;
+    border-left:0 none;
+    border-right:0 none;
+}
+
+#Contents .k-grid-header .k-header:last-child,
+#Contents .k-grid-content td[role="gridcell"]:last-child
+{
+    padding-right:0;
+}
+
+/*#Contents .k-grid-content td[style^="display:none"],
+#Contents .k-grid-content td[style^="display: none"]
+{
+    width:0 !important
+}*/
+
+/*#endregion*/
+
+/*#region inner containers*/
+
+.innerContent
+{
+    position:relative;
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+    letter-spacing:-4px; /*White space fix*/
+}
+
+.innerContent > *
+{
+    letter-spacing:normal; /* reset after the fix */
+}
+
+/*#endregion*/
+
+/*#region Contents*/
+
+#Contents
+{
+    display:block;
+    box-sizing:border-box;
+    padding:0;
+    padding-top:1%;
+    margin:0;
+    width:100%;
+    min-height: 300px;
+}
+
+#Contents .innerContent.stacked > *
+{
+    display:block;
+    padding-left:0;
+    padding-right:0;
+    width:100%;
+}
+
+#Contents .innerContent.stacked > .contentOpenissue
+{
+    position:absolute;
+    top:0;
+    left:0;
+    height:auto;
+}
+
+#Contents .innerContent.stacked > .contentdocument
+{
+    padding-top:3rem;
+}
+
+#Contents .innerContent.stacked.noLink > .contentdocument
+{
+    padding-top:0;
+}
+
+/*#endregion*/
+
+
+
+/*#endregion*/
+
+/*#region footer*/
+
+#Footer {
+    display: block;
+    position: fixed;
+    background-color: #1c3c6d;
+    width: 100%;
+    height: 4rem;
+    bottom:0;
+    z-index:2;
+}
+
+#Footer img {
+    display: inline-block;
+    position: relative;
+    margin: auto;
+    padding: 1rem 0 1rem 0;
+    height: 2rem;
+    vertical-align:middle;
+    padding-right:20px;
+}
+
+
+#Footer img.homeLink {
+    /*border-width: 0px;*/
+    cursor:pointer;
+    border: 2px solid white !important;
+    border-radius: 100%;
+    padding: 0.5em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height:40px;
+    width:40px;
+    margin-right:20px;
+}
+
+.centerWrapper {
+    text-align:center;
+    height:100%;
+}
+
+/*#endregion*/
+
+/*#region Qtip2*/
+
+.qtipCallCenterInfo,
+.qtipCallCenterNumber {
+    display: inline-block;
+}
+
+.qtip_blue {
+    background-color: #ffffff;
+    color: #1c3c6d;
+    border-color: #1c3c6d;
+    border-width: medium;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    max-width: 500px;
+}
+
+/*#endregion*/
+
+/*#region Create issue*/
+
+.raisedBy {
+    float: left;
+    width: 100px;
+}
+
+.insertionFieldCaption + sup:before
+{
+    content:"*";
+    font-size: 1.3em;
+}
+
+/*#endregion*/
+
+/*#region My issues*/
+
+
+/*#endregion*/
